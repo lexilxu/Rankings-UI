@@ -59,7 +59,7 @@ class java_import:
         self.get_N()
         if model_choice == "RIM":
             self.argument = "-permtest file=" + self.rankings_path
-            self.java_file = "Restaurants_Example/rankingTool/java/RIM/model/RIM_main.java"
+            self.java_file = "rankingTool/java/RIM/model/RIM_main.java"
             self.argument = self.argument + " ptest=0 pvalidation=0 dataSeed=400 runtimeSeed=400 nboot=" + str(nBoot)
             for i in range(len(self.params)):
                 para, value = list(self.params.items())[i]
@@ -68,7 +68,7 @@ class java_import:
             with open(self.rankings_path) as f:
                 firstline = f.readline()
                 numbers = [int(float(x)) for x in firstline.split(" ")]
-                self.java_file = "Restaurants_Example/rankingTool/java/landmarks/testing.java"
+                self.java_file = "rankingTool/java/landmarks/testing.java"
             self.argument = "-ltest infile=" + self.directory + "/landmarks.txt" + " outfile=" + self.directory + "/landmarks_out.txt"
             self.argument = self.argument + " nboot=" + str(nBoot) + " n=" + str(len(numbers))
         elif model_choice == "GMM" or model_choice == "Mallows" or model_choice == "Greedy":
@@ -88,7 +88,7 @@ class java_import:
             cmd = ['java', self.java_file] + self.argument.split()
         else:
             cmd = ['java', '-Xms100M', '-Xmx1500M', '-classpath',
-                   'Restaurants_Example/rankingTool/java/',self.java_file] + self.argument.split()
+                   'rankingTool/java/',self.java_file] + self.argument.split()
         proc = subprocess.Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=STDOUT)
         stdout,stderr = proc.communicate()
         if self.nBoot == 1:
@@ -201,7 +201,7 @@ class java_import:
         names_to_install = [x for x in packnames if not rpackages.isinstalled(x)]
         if len(names_to_install) > 0:
             utils.install_packages(StrVector(names_to_install))
-        robjects.r.source("Restaurants_Example/rankingTool/R/plotTree.r", encoding="utf-8")
+        robjects.r.source("rankingTool/R/plotTree.r", encoding="utf-8")
         #doit = robjects.globalenv['doit']
         makeplot = robjects.globalenv['makeplot']
         if self.nBoot==1:
@@ -229,7 +229,7 @@ class java_import:
         #par =  robjects.globalenv.find('par')
         #closepng = robjects.globalenv.find('dev.off')
         #print(self.tree)
-        #createpng("Restaurants_Example/rankingTool/R/" + self.model_choice + ".png")
+        #createpng("rankingTool/R/" + self.model_choice + ".png")
         #par(mfrow=(1,1), mar=(0.1,0.1,0.1,0.1))
         #       closepng()
 
@@ -247,7 +247,7 @@ class java_import:
         names_to_install = [x for x in packnames if not rpackages.isinstalled(x)]
         if len(names_to_install) > 0:
             utils.install_packages(StrVector(names_to_install))
-        robjects.r.source("Restaurants_Example/rankingTool/R/landmarks.r", encoding="utf-8")
+        robjects.r.source("rankingTool/R/landmarks.r", encoding="utf-8")
         landmarks = [1,2,3,4]
         #for i in range(len(self.params)):
             #para, value = list(self.params.items())[i]
@@ -362,7 +362,7 @@ class java_import:
 
 
 
-#rankings_path = "Restaurants_Example/rankingTool/java/model/restaurants_clean.txt"
+#rankings_path = "rankingTool/java/model/restaurants_clean.txt"
 #model_choice = "gmm"
 #params = dict(ptest=.3, pvalidation=.2, iters=1000, temp=.03, dataSeed=400, runtimeSeed=400)
 #def main():

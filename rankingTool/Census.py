@@ -116,7 +116,7 @@ class census_window:
         self.image = []
         self.treeplot = []
         self.directory = StringVar()
-        self.directory.set("/Users/xuliu/Library/CloudStorage/OneDrive-UW/Rankings-UI-main/Restaurants_Example")
+        #self.directory.set("/Users/xuliu/Library/CloudStorage/OneDrive-UW/Rankings-UI-main/Restaurants_Example")
 
         s = ttk.Style()
         s.theme_use('clam')
