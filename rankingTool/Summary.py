@@ -258,12 +258,6 @@ class Summary:
                 elif mod == "Borda (Ratings)":
                     bspath = self.window.generate_bootstrap(self.nBoot.get(),"Borda (Ratings)") + "/bootstrap/Borda/Rate_bootcentral.txt"
 
-                isExist = os.path.exists(self.directory)
-                for file_name in os.listdir(self.directory):
-                    file = self.directory + file_name
-                    if os.path.isfile(file):
-                        os.remove(file)
-
                 bootmat = np.loadtxt(bspath, delimiter=',')
                 self.Q_boot.append(self.compute_Q_matrix(bootmat, self.result[mod]['ranking'],isboot=True))
                 fig2, ax2 = plt.subplots(figsize=(3,3))
