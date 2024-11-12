@@ -8,7 +8,7 @@ Before download the package, please make sure you have installed all dependencie
 
 Download the package:
 ```
-pip install rankingTool==1.0
+pip install git+https://github.com/lexilxu/Rankings-UI
 ```
 -----
 To initialize the GUI, the user needs a configuration file. 
