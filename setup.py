@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='ran',
+    name='rankingTool',
     version='2.0',
     license='MIT',
     author="Haoqiang Kang",
