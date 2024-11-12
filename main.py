@@ -11,7 +11,7 @@ from rankingTool.GUI import GUI
 #ranking_path = "Restaurants_Example/Ranking.csv"
 #OP_path = "Restaurants_Example/OP_new.csv"
 #reviews_path ="Restaurants_Example/Reviews.csv"
-config_file = "Restaurants_Example/config_rest.toml"
+config_file = "config_rest.toml"
 
 mod_attributes = {'Mallows': dict(),
                   'RIM': dict(iters=100, temp=.03),
