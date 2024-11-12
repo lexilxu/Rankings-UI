@@ -13,7 +13,6 @@ setup(
     keywords='GUI',
     install_requires=[
           'toml',
-          'tkinter',
           'pandas',
           'numpy'
       ],
