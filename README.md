@@ -25,7 +25,8 @@ Tasks
 * Better example to check the results.
 * Pop the load data window up again? Now it is one-time upload.
 * A bug with filtering --- cannot switch back to all items.
-* Proposal details? 
+* Proposal details?
+* Add a default directory in the configuration file.
 
 
 * Displaying reviews on a canvas as boxes, with graphical attributes that depend on the reviews 
