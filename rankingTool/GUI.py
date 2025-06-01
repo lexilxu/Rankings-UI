@@ -230,7 +230,7 @@ class GUI:
 
         # Option menu for data type ("Rankings only", "Ratings only", "Ratings and Rankings").
         self.datatype = StringVar(self.sub1_canvas)
-        self.datatype.set("Rankings only")
+        self.datatype.set("Ratings and Rankings")
         datatype_menu = OptionMenu(self.sub1_canvas, self.datatype,
                                    *["Rankings only", "Ratings only", "Ratings and Rankings"])
         datatype_menu.config(bg='grey90')
@@ -379,7 +379,7 @@ class GUI:
                                           ignore_index=True)
                     dict.update({"Reviewer Name": review_name})
                     dict.update({"Proposal Name": rank_name})
-                    rank = rankings[review_name].index.get_loc(rank_name)
+                    rank = rankings[review_name][rankings[review_name]==rank_name].index[0]
                     dict.update({"OP":rank})
 
                     score = pd.concat([score, pd.DataFrame([dict])], ignore_index=True)
@@ -502,14 +502,14 @@ class GUI:
         for i in range(len(self.cen_rankings)):
             self.canvas.create_text(self.ranking_area_x // 3 + 5 * self.box_width // 8 - 10,
                                     2.5 * self.box_height + 140 + i * (self.box_height + self.box_distance_y * 2),
-                                    text=f'{round(average_rankings[self.rankings_name['long'].index(self.cen_rankings[i])],2)}', font=("Comic Sans MS", 13))
+                                    text=f"{round(average_rankings[self.rankings_name['long'].index(self.cen_rankings[i])],2)}", font=("Comic Sans MS", 13))
             self.canvas.create_text(self.ranking_area_x // 3 + 5 * self.box_width // 8 + 40,
                                     2.5 * self.box_height + 140 + i * (self.box_height + self.box_distance_y * 2),
-                                    text=f'{round(min_ranking[self.rankings_name['long'].index(self.cen_rankings[i])], 2)}',
+                                    text=f"{round(min_ranking[self.rankings_name['long'].index(self.cen_rankings[i])], 2)}",
                                     font=("Comic Sans MS", 13))
             self.canvas.create_text(self.ranking_area_x // 3 + 5 * self.box_width // 8 + 90,
                                     2.5 * self.box_height + 140 + i * (self.box_height + self.box_distance_y * 2),
-                                    text=f'{round(max_ranking[self.rankings_name['long'].index(self.cen_rankings[i])], 2)}',
+                                    text=f"{round(max_ranking[self.rankings_name['long'].index(self.cen_rankings[i])], 2)}",
                                     font=("Comic Sans MS", 13))
 
 

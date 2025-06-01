@@ -48,7 +48,7 @@ class java_import:
         self.directory = directory + "/" + model_choice
         self.nBoot = nBoot
         isExist = os.path.exists(self.directory)
-        if not isExist and self.nBoot !=1:
+        if not isExist:
             os.makedirs(self.directory)
         else:
             for file_name in os.listdir(self.directory):

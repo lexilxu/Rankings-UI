@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+rankingTool/rankingTool.egg-info/PKG-INFO
+rankingTool/rankingTool.egg-info/SOURCES.txt
+rankingTool/rankingTool.egg-info/dependency_links.txt
+rankingTool/rankingTool.egg-info/requires.txt
+rankingTool/rankingTool.egg-info/top_level.txt

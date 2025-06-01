@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: rankingTool
+Version: 2.0
+Home-page: https://github.com/lexilxu/Rankings-UI
+Author: Haoqiang Kang
+Author-email: haoqik@cs.washington.edu
+License: MIT
+Keywords: GUI
+License-File: LICENSE.txt
+Requires-Dist: toml
+Requires-Dist: pandas
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
